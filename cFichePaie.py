@@ -4,9 +4,8 @@
 ###  Nom: Philippe Bertrand
 ###  Description du fichier: Définition de la classe FichePaie
 ####################################################################################
-import datetime
 
-import cTypeEmploie as T
+import cFichePaie as F
 import cEmploye as E
 import datetime as DT
 import cTypeEmploie as T
@@ -56,11 +55,12 @@ class FichePaie:
         Chaine +="\nNuméro de l'employé : " + self.__InformationEmploye.NumEmploye
         Chaine +="\nPrénom de l'employé : " + self.__InformationEmploye.PrenomEmploye
         Chaine +="\nNom de l'employé : " + self.__InformationEmploye.NomEmploye
-        Chaine +="\nTaux horaire : " + str(self.__InformationEmploye.TauxHoraire)
+        Chaine +="\nTaux horaire : " + str(self.__InformationEmploye.TauxHoraire) + "\n"
+
         Chaine += ("*" * 45)
-        Chaine +="-----------------------------------------------Calcul de la paye-------------------------------------------------------"
+        Chaine +="\n-----------------------------------------------Calcul de la paye-------------------------------------------------------"
         Chaine +="\nNombre d'heures : " + str(self.__NombreHeures)
-        Chaine +="Salaire brut :                                    {:>7.2f} $\n".format(self.__SalaireBrut)
+        Chaine +="\nSalaire brut :                                    {:>7.2f} $\n".format(self.__SalaireBrut)
         Chaine +="Impôt :                                           {:>7.2f} %\n".format(self.__Impot)
         Chaine +="Salaire Net :                                     {:>7.2f} $\n".format(self.__SalaireNet)
         Chaine += ("*" * 60)
@@ -215,8 +215,20 @@ class FichePaie:
 
 def main():
 
+   lsFiche = []
 
+   lsInfosEmploye = []
 
- if __name__ == "__main__":
-        main()
+   lsInfosEmploye.append(E.Employe("H-2345","Philippe","Bertrand", "819-827-4693","Marketing", 60.00))
+
+   lsFiche.append(F.FichePaie(lsInfosEmploye[0], "ABC",))
+
+   FichePaie.DateFiche = DT.datetime.now()
+   FichePaie.NumeroFiche = lsFiche[0]
+
+   for objFiche in lsFiche:
+       print(objFiche)
+
+if __name__ == "__main__":
+    main()
 

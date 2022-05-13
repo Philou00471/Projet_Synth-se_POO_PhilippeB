@@ -5,7 +5,6 @@
 ###  Description du fichier: Définition de la classe TypeEmploie
 ####################################################################################
 #Imporation de la classe Employe
-import cEmploye as E
 
 
 class TypeEmploie:
@@ -16,12 +15,11 @@ class TypeEmploie:
     #####  MÉTHODE CONSTRUCTEUR  #####
     ###################################
 
-    def __init__(self, pNoEmploye = E.Employe.NumEmploye, pNom = "ABC", pPrenom = "XYZ"):
+    def __init__(self, pNoEmploye = "X-1111", pNom = "ABC", pPrenom = "XYZ"):
 
         self.__NumeroEmploye = pNoEmploye
         self.NomEmploye = pNom
         self.PrenomEmploye = pPrenom
-
 
     def __str__(self):
         """
@@ -51,7 +49,7 @@ class TypeEmploie:
 
         self.__NumeroEmploye = pNoEmploye
 
-    NumeroEmploye = property(__getNoEmp,__setNoEmp)
+    NumEmploye = property(__getNoEmp,__setNoEmp)
 
 #################################################################################################
 #################################################################################################
@@ -68,7 +66,7 @@ class T_TempsPlein(TypeEmploie):
     #####  MÉTHODE CONSTRUCTEUR  #####
     ###################################
 
-    def __init__(self, pNoEmploye=E.Employe.NumEmploye, pNom="ABC", pPrenom="XYZ"):
+    def __init__(self, pNoEmploye= "X-1111", pNom="ABC", pPrenom="XYZ"):
 
         TypeEmploie.__init__(self,pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Temps plein"
@@ -109,7 +107,7 @@ class T_TempsPartiel(TypeEmploie):
     #####  MÉTHODE CONSTRUCTEUR  #####
     ###################################
 
-    def __init__(self, pNoEmploye=E.Employe.NumEmploye, pNom="ABC", pPrenom="XYZ"):
+    def __init__(self, pNoEmploye="X-1111", pNom="ABC", pPrenom="XYZ"):
 
         TypeEmploie.__init__(self,pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Temps partiel"
@@ -143,7 +141,7 @@ class T_SurAppel(TypeEmploie):
     #####  MÉTHODE CONSTRUCTEUR  #####
     ###################################
 
-    def __init__(self, pNoEmploye=E.Employe.NumEmploye, pNom="ABC", pPrenom="XYZ"):
+    def __init__(self, pNoEmploye="X-1111", pNom="ABC", pPrenom="XYZ"):
         TypeEmploie.__init__(self, pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Sur appel"
 

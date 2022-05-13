@@ -107,7 +107,7 @@ class Employe :
             self.__NumeroEmploye = pNoEmp
 
     #Propriétés pour le numéro de l'employé
-    NumEmploye = property(__getNoEmp, __setNoEmp)
+    NumEmploye = property(__getNoEmp ,__setNoEmp)
 
     #Méthode accesseur pour l'attribut
     def __getTel(self) -> str:

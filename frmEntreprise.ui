@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1218</width>
-    <height>880</height>
+    <width>1717</width>
+    <height>850</height>
    </rect>
   </property>
   <property name="font">
@@ -129,20 +129,20 @@
    <widget class="QGroupBox" name="gbxAjouterModifier">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>30</y>
+      <x>450</x>
+      <y>0</y>
       <width>601</width>
       <height>301</height>
      </rect>
     </property>
     <property name="title">
-     <string>AjouterModifier</string>
+     <string/>
     </property>
     <widget class="QLineEdit" name="txtNumero">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>100</y>
+       <y>40</y>
        <width>191</width>
        <height>20</height>
       </rect>
@@ -152,7 +152,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>150</y>
+       <y>110</y>
        <width>191</width>
        <height>20</height>
       </rect>
@@ -162,7 +162,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>80</y>
+       <y>20</y>
        <width>171</width>
        <height>16</height>
       </rect>
@@ -175,7 +175,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>130</y>
+       <y>80</y>
        <width>131</width>
        <height>21</height>
       </rect>
@@ -188,7 +188,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>180</y>
+       <y>150</y>
        <width>201</width>
        <height>21</height>
       </rect>
@@ -197,11 +197,11 @@
       <string>Prénom de l'employé</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="txtPrenom">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>200</y>
+       <y>170</y>
        <width>191</width>
        <height>20</height>
       </rect>
@@ -211,7 +211,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>250</y>
+       <y>220</y>
        <width>191</width>
        <height>20</height>
       </rect>
@@ -221,7 +221,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>230</y>
+       <y>200</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -234,7 +234,7 @@
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>80</y>
+       <y>20</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -247,7 +247,7 @@
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>150</y>
+       <y>110</y>
        <width>191</width>
        <height>20</height>
       </rect>
@@ -257,7 +257,7 @@
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>130</y>
+       <y>90</y>
        <width>191</width>
        <height>16</height>
       </rect>
@@ -266,11 +266,11 @@
       <string>Taux horaire</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btnAjouterModifier">
+    <widget class="QPushButton" name="btnAjouterModifierSupprimer">
      <property name="geometry">
       <rect>
        <x>320</x>
-       <y>200</y>
+       <y>170</y>
        <width>231</width>
        <height>61</height>
       </rect>
@@ -285,13 +285,13 @@
       <string>Ajouter l'employé</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="cboFonction">
+    <widget class="QLineEdit" name="txtFonction">
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>100</y>
+       <y>40</y>
        <width>191</width>
-       <height>22</height>
+       <height>20</height>
       </rect>
      </property>
     </widget>
@@ -299,8 +299,8 @@
    <widget class="QPushButton" name="btnRetourMenu">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>360</y>
+      <x>30</x>
+      <y>460</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -318,8 +318,8 @@
    <widget class="QTextBrowser" name="txtMessage">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>410</y>
+      <x>30</x>
+      <y>510</y>
       <width>321</width>
       <height>91</height>
      </rect>
@@ -352,13 +352,252 @@
      <string>Bienvenue sur le site de l'entreprise</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="gbxFichePaie">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>320</y>
+      <width>501</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QComboBox" name="cboTypeEmploie">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTypeEmploie">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Type d'emploie</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtNbHeures">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblNbHeures">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>110</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nombre d'heures travaillées</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="txtAffichageFiche">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>200</y>
+       <width>451</width>
+       <height>192</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblFichePaie">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>160</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fiche de paie</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnCalculerLaPaie">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>70</y>
+       <width>191</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Calculer la paie</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbxRecherche">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>0</y>
+      <width>591</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QComboBox" name="cboCritereSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblCritereSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Critère de recherche</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblValeurSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Valeur à chercher</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtValeurSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblResultSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>281</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Résultat(s) de recherche</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="txtResultSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>541</width>
+       <height>192</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSearch">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>110</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Lancer la recherche</string>
+     </property>
+    </widget>
+   </widget>
    <widget class="QGroupBox" name="gbxModifSupp">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>0</y>
-      <width>601</width>
-      <height>391</height>
+      <x>1100</x>
+      <y>310</y>
+      <width>561</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="title">
@@ -369,7 +608,7 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>201</width>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -437,7 +676,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="btnRechModifSupp">
+    <widget class="QPushButton" name="btnRech">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -550,116 +789,14 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="gbxFichePaie">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>410</y>
-      <width>501</width>
-      <height>421</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
-    </property>
-    <widget class="QComboBox" name="cboTypeEmploie">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>70</y>
-       <width>201</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lblTypeEmploie">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>40</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Type d'emploie</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txtNbHeures">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>130</y>
-       <width>201</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lblNbHeures">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>110</y>
-       <width>201</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Nombre d'heures travaillées</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="txtAffichageFiche">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>200</y>
-       <width>451</width>
-       <height>192</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lblFichePaie">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>160</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Fiche de paie</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnCalculerLaPaie">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>70</y>
-       <width>191</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Calculer la paie</string>
-     </property>
-    </widget>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1218</width>
-     <height>27</height>
+     <width>1717</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
