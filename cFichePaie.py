@@ -50,20 +50,21 @@ class FichePaie:
         Méthode d'affichage spéciale pour une fiche de paie d'un employé
         :return: Chaine : Chaine d'affichage
         """
-        Chaine ="-----------------------------------------------Information sur l'employé-----------------------------------------------"
+        Chaine ="-----------------------------Information sur l'employé-----------------------"
         Chaine +="\nNuméro de la fiche de paie : {}            Date : {}\n".format(self.__NumeroFiche, self.__Date.strftime("%A le %d %B %Y"))
         Chaine +="\nNuméro de l'employé : " + self.__InformationEmploye.NumEmploye
         Chaine +="\nPrénom de l'employé : " + self.__InformationEmploye.PrenomEmploye
         Chaine +="\nNom de l'employé : " + self.__InformationEmploye.NomEmploye
         Chaine +="\nTaux horaire : " + str(self.__InformationEmploye.TauxHoraire) + "\n"
 
-        Chaine += ("*" * 45)
-        Chaine +="\n-----------------------------------------------Calcul de la paye-------------------------------------------------------"
+        Chaine += ("*" * 58)
+        Chaine +="\n-----------------------------Calcul de la paye-------------------------------"
         Chaine +="\nNombre d'heures : " + str(self.__NombreHeures)
+        Chaine +="\nType d'emploie : " + self.__TypeEmploye.TypeEmploie
         Chaine +="\nSalaire brut :                                    {:>7.2f} $\n".format(self.__SalaireBrut)
         Chaine +="Impôt :                                           {:>7.2f} %\n".format(self.__Impot)
         Chaine +="Salaire Net :                                     {:>7.2f} $\n".format(self.__SalaireNet)
-        Chaine += ("*" * 60)
+        Chaine += ("*" * 58)
         return Chaine
 
     ############################################
@@ -201,11 +202,11 @@ class FichePaie:
         if self.__TypeEmploye.TypeEmploie == "Temps plein":
             self.__Impot = 0.40
         if self.__TypeEmploye.TypeEmploie == "Temps partiel":
-            self.__Impot = 0.30
-        if self.__TypeEmploye.TypeEmploie == "Sur appel":
             self.__Impot = 0.20
+        if self.__TypeEmploye.TypeEmploie == "Sur appel":
+            self.__Impot = 0.10
 
-        SousTotal = self.__NombreHeures * E.Employe.TauxHoraire
+        SousTotal = self.__NombreHeures * self.__InformationEmploye.TauxHoraire
 
         MontantImpot = SousTotal  * self.__Impot
 

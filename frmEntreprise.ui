@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1717</width>
+    <width>2336</width>
     <height>850</height>
    </rect>
   </property>
@@ -25,7 +25,7 @@
       <x>40</x>
       <y>50</y>
       <width>331</width>
-      <height>291</height>
+      <height>331</height>
      </rect>
     </property>
     <property name="title">
@@ -103,7 +103,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>250</y>
+       <y>290</y>
        <width>311</width>
        <height>31</height>
       </rect>
@@ -125,8 +125,21 @@
       <string>Calculer un paie</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btnAfficherPaie">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Afficher l'historique des fiches de paie</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="gbxAjouterModifier">
+   <widget class="QGroupBox" name="gbxAjouterModifierSupprimer">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -378,7 +391,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>40</y>
+       <y>50</y>
        <width>201</width>
        <height>21</height>
       </rect>
@@ -444,13 +457,59 @@
      <property name="geometry">
       <rect>
        <x>290</x>
-       <y>70</y>
+       <y>100</y>
        <width>191</width>
        <height>61</height>
       </rect>
      </property>
      <property name="text">
       <string>Calculer la paie</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="textNumeroEmploye">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>60</y>
+       <width>191</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblNumeroEmploye">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>40</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Numéro de l'employé</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtFiche">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblNumeroFiche">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Numéro de la fiche</string>
      </property>
     </widget>
    </widget>
@@ -608,7 +667,7 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>241</width>
+       <width>261</width>
        <height>31</height>
       </rect>
      </property>
@@ -700,7 +759,7 @@
       <rect>
        <x>10</x>
        <y>240</y>
-       <width>301</width>
+       <width>421</width>
        <height>21</height>
       </rect>
      </property>
@@ -759,7 +818,7 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>321</width>
+       <width>421</width>
        <height>21</height>
       </rect>
      </property>
@@ -789,13 +848,95 @@
      </property>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="gbxConnexion">
+    <property name="geometry">
+     <rect>
+      <x>1770</x>
+      <y>280</y>
+      <width>331</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLineEdit" name="txtNomAdmin">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>301</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtMdpAdmin">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>301</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnConnexion">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>240</y>
+       <width>171</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Se connecter</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblNomAdmin">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Nom d'utilisateur admin:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblMdpAdmin">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Mot de passe admin:</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1717</width>
+     <width>2336</width>
      <height>21</height>
     </rect>
    </property>
