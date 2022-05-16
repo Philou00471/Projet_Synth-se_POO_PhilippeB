@@ -9,6 +9,8 @@ import cFichePaie as F
 import cEmploye as E
 import datetime as DT
 import cTypeEmploie as T
+import locale
+locale.setlocale(locale.LC_ALL, "fr_CA.utf8")
 class FichePaie:
     """
     Classe d'objet FichePaie
@@ -156,7 +158,7 @@ class FichePaie:
         :param pNbHeures:
         :return:
         """
-        if pNbHeures > 0:
+        if pNbHeures > 0 :
             self.__NombreHeures = pNbHeures
 
     #Propriété pour NombreHeures
@@ -174,7 +176,7 @@ class FichePaie:
     def __getTypEmploye(self) -> object:
         return self.__TypeEmploye
 
-    def __setTypEmploye(self,pTypEmploye) ->None:
+    def __setTypEmploye(self,pTypEmploye: object) ->None:
 
         self.__TypeEmploye = pTypEmploye
 
@@ -199,12 +201,8 @@ class FichePaie:
 #Définition de la méthode CalculerPaie
     def CalculerPaie(self) -> None:
     #Condition de l'impot selon le type d'emploie de l'employé
-        if self.__TypeEmploye.TypeEmploie == "Temps plein":
-            self.__Impot = 0.40
-        if self.__TypeEmploye.TypeEmploie == "Temps partiel":
-            self.__Impot = 0.20
-        if self.__TypeEmploye.TypeEmploie == "Sur appel":
-            self.__Impot = 0.10
+
+        self.Impot = self.TypeEmploye.CalculerImpot
 
         SousTotal = self.__NombreHeures * self.__InformationEmploye.TauxHoraire
 
@@ -213,6 +211,8 @@ class FichePaie:
         MontantTotal = self.__SalaireBrut - MontantImpot
 
         self.__SalaireNet = MontantTotal
+        self.__SalaireBrut = SousTotal
+        self.__Impot = MontantImpot
 
 def main():
 

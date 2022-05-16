@@ -129,7 +129,7 @@ class Employe :
         Valide = True
 
         if len(pTel) == 12: #La longueur du NoTel doit être de 12
-            for i in range(0, len(pTel)):
+             for i in range(0, len(pTel)):
                 if i in [0,1,2,4,5,6,8,9,10,11]: #Si l'index des nombres suivants n'est pas un nombre entre 0 et 9 = erreur
                     if pTel[i] not in "0123456789":
                         Valide = False

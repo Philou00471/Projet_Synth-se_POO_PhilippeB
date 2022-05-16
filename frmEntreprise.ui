@@ -466,7 +466,7 @@
       <string>Calculer la paie</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="textNumeroEmploye">
+    <widget class="QLineEdit" name="txtNumeroEmploye">
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -851,8 +851,8 @@
    <widget class="QGroupBox" name="gbxConnexion">
     <property name="geometry">
      <rect>
-      <x>1770</x>
-      <y>280</y>
+      <x>1640</x>
+      <y>10</y>
       <width>331</width>
       <height>301</height>
      </rect>
@@ -927,6 +927,63 @@
      </property>
      <property name="text">
       <string>Mot de passe admin:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbxVerifQuitter">
+    <property name="geometry">
+     <rect>
+      <x>1660</x>
+      <y>470</y>
+      <width>381</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="lblVerifQuitter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>361</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Voulez-vous vraiment quitter ?</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnOUI">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>130</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>OUI</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnNON">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>130</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>NON</string>
      </property>
     </widget>
    </widget>

@@ -4,9 +4,9 @@
 ###  Nom: Philippe Bertrand
 ###  Description du fichier: Définition de la classe TypeEmploie
 ####################################################################################
-#Imporation de la classe Employe
 
 
+#Création de la classe TypeEmploie
 class TypeEmploie:
     """
     Classe parent TypeEmploie
@@ -21,6 +21,9 @@ class TypeEmploie:
         self.NomEmploye = pNom
         self.PrenomEmploye = pPrenom
 
+    ############################################
+    #####  MÉTHODES SPÉCIALES OU MAGIQUES  #####
+    ############################################
     def __str__(self):
         """
         Méthode spéciale pour l'affichage d'un objet TypeEmploie()
@@ -71,7 +74,9 @@ class T_TempsPlein(TypeEmploie):
         TypeEmploie.__init__(self,pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Temps plein"
 
-
+    ############################################
+    #####  MÉTHODES SPÉCIALES OU MAGIQUES  #####
+    ############################################
     def __str__(self):
         """
         Méthode spéciale pour l'affichage d'un objet T_TempsPlein
@@ -85,19 +90,21 @@ class T_TempsPlein(TypeEmploie):
     ############################################
     #####  MÉTHODES D'ACCÈS ET PROPRIÉTÉS  #####
     ############################################
-
+    #Méthode accesseur
     def __getTypEmp(self) -> str:
         """
-
+        Méthode accesseur pour lire la valeur de l'attribut TypEmp
         :return: string
         """
         return self.__TypeEmploie
 
+    #Propriétés de TypeEmploie
     TypeEmploie = property(__getTypEmp)
 
 #################################################################################################
 #################################################################################################
 
+#Création de la classe T_TempsPartiel hérité de la classe TypeEmploie
 class T_TempsPartiel(TypeEmploie):
     """
     Classe enfant T_TempsPartiel
@@ -112,7 +119,9 @@ class T_TempsPartiel(TypeEmploie):
         TypeEmploie.__init__(self,pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Temps partiel"
 
-
+    ############################################
+    #####  MÉTHODES SPÉCIALES OU MAGIQUES  #####
+    ############################################
     def __str__(self):
         """
         Méthode spéciale pour l'affichage d'un objet T_TempsPartiel
@@ -123,15 +132,18 @@ class T_TempsPartiel(TypeEmploie):
 
         return Chaine
 
+    #Méthode accesseur
     def __getTypEmp(self) -> str:
         """
-
+        Méthode accesseur pour lire la valeur de l'attribut TypEmp
         :return: string
         """
         return self.__TypeEmploie
 
+    #Propriétés TypeEmploie
     TypeEmploie = property (__getTypEmp)
 
+#Création de la classe T_SurAppel en héritage de la classe TypeEmploie
 class T_SurAppel(TypeEmploie):
     """
     Classe enfant T_SurAppel
@@ -145,6 +157,9 @@ class T_SurAppel(TypeEmploie):
         TypeEmploie.__init__(self, pNoEmploye, pNom, pPrenom)
         self.__TypeEmploie = "Sur appel"
 
+    ############################################
+    #####  MÉTHODES SPÉCIALES OU MAGIQUES  #####
+    ############################################
     def __str__(self):
         """
         Méthode spéciale pour l'affichage d'un objet T_TempsSurAppel
@@ -158,15 +173,30 @@ class T_SurAppel(TypeEmploie):
     ############################################
     #####  MÉTHODES D'ACCÈS ET PROPRIÉTÉS  #####
     ############################################
-
+    #Méthode accesseur
     def __getTypEmp(self) -> str:
         """
-
+        Méthode accesseur pour lire la valeur de l'attribut TypEmp
         :return: string
         """
         return self.__TypeEmploie
 
+    #Propriétés TypeEmploie
     TypeEmploie = property (__getTypEmp)
+
+    def CalculerImpot(self) -> float:
+
+        Impot = 0.00
+
+        if TypeEmploie == "Temps plein":
+            self.Impot = 0.40
+        if TypeEmploie == "Temps partiel":
+            self.Impot = 0.20
+        if TypeEmploie == "Sur appel":
+            self.Impot = 0.10
+
+        return(Impot)
+
 
 
 def main():
