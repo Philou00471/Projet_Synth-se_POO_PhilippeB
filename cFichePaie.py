@@ -9,11 +9,6 @@ import cFichePaie as F
 import cEmploye as E
 import datetime as DT
 import cTypeEmploie as T
-#import locale
-
-#locale.setlocale(locale.LC_ALL, "fr_CA.utf8")
-
-
 class FichePaie:
     """
     Classe d'objet FichePaie
@@ -161,7 +156,7 @@ class FichePaie:
         :param pNbHeures:
         :return:
         """
-        if pNbHeures > 0 :
+        if pNbHeures > 0:
             self.__NombreHeures = pNbHeures
 
     #Propriété pour NombreHeures
@@ -179,7 +174,7 @@ class FichePaie:
     def __getTypEmploye(self) -> object:
         return self.__TypeEmploye
 
-    def __setTypEmploye(self,pTypEmploye: object) ->None:
+    def __setTypEmploye(self,pTypEmploye) ->None:
 
         self.__TypeEmploye = pTypEmploye
 
@@ -204,91 +199,36 @@ class FichePaie:
 #Définition de la méthode CalculerPaie
     def CalculerPaie(self) -> None:
     #Condition de l'impot selon le type d'emploie de l'employé
-
-
-        if self.__TypeEmploye.TypeEmploie  == "Temps plein":
-          self.__Impot = 0.40
+        if self.__TypeEmploye.TypeEmploie == "Temps plein":
+            self.__Impot = 0.40
         if self.__TypeEmploye.TypeEmploie == "Temps partiel":
-          self.__Impot = 0.20
+            self.__Impot = 0.20
         if self.__TypeEmploye.TypeEmploie == "Sur appel":
-          self.__Impot = 0.10
+            self.__Impot = 0.10
 
         SousTotal = self.__NombreHeures * self.__InformationEmploye.TauxHoraire
 
-        MontantImpot = self.__Impot
+        MontantImpot = SousTotal  * self.__Impot
 
-        MontantTotal = SousTotal - MontantImpot * SousTotal
+        MontantTotal = self.__SalaireBrut - MontantImpot
 
         self.__SalaireNet = MontantTotal
-        self.__SalaireBrut = SousTotal
-        self.__Impot = MontantImpot
 
 def main():
-    lsEmployes = []
 
-    # Instanciation d'objets
-    lsEmployes.append(E.Employe("H-2345", "Philippe", "Bertrand", "819-827-4693", "Marketing", 60.00))
-    lsEmployes.append(E.Employe("P-2567", "Jean", "Lasalle", "819-856-4111", "Superviseur", 120.00))
-    lsEmployes.append(E.Employe("W-5555", "Marine", "Lepen", "819-856-0002", "Superviseur", 55.55))
-    lsEmployes.append(E.Employe("K-6395", "Emmanuel", "Macron", "819-427-4569", "Comptabilité", 51.99))
-    lsEmployes.append(E.Employe("L-2789", "Jean-Luc", "Mélenchon", "810-555-5555", "Gestion", 149.00))
+   lsFiche = []
 
-    # Création de la liste lsTypeEmploye
+   lsInfosEmploye = []
 
-    lsTypeEmploye = []
+   lsInfosEmploye.append(E.Employe("H-2345","Philippe","Bertrand", "819-827-4693","Marketing", 60.00))
 
-    # Instanciation d'objets
+   lsFiche.append(F.FichePaie(lsInfosEmploye[0], "ABC",))
 
-    lsTypeEmploye.append(T.T_TempsPartiel("", "", ""))
-    lsTypeEmploye.append(T.T_SurAppel("", "", ""))
-    lsTypeEmploye.append(T.T_TempsPlein("", "", ""))
+   FichePaie.DateFiche = DT.datetime.now()
+   FichePaie.NumeroFiche = lsFiche[0]
 
-    # Création de la liste lsFichePaie
-
-    lsFichePaie = []
-
-    # Instanciation d'objets
-
-    lsFichePaie.append(
-        FichePaie(lsEmployes[0], "A1A1A1A1A1", DT.datetime.now(), 30, 900, lsTypeEmploye[0], 0.10, 810))
-    lsFichePaie.append(
-        FichePaie(lsEmployes[1], "B2B2B2B2B2", DT.datetime.now(), 60, 7200, lsTypeEmploye[2], 0.40, 4320))
-    lsFichePaie.append(
-        FichePaie(lsEmployes[2], "C3C3C3C3C3", DT.datetime.now(), 20, 2222, lsTypeEmploye[1], 0.20, 1777.6))
-    lsFichePaie.append(
-        FichePaie(lsEmployes[3], "D4D4D4D4D4", DT.datetime.now(), 50, 2599.5, lsTypeEmploye[2], 0.40, 1559.7))
-    lsFichePaie.append(
-        FichePaie(lsEmployes[4], "E5E5E5E5E5", DT.datetime.now(), 25, 3725, lsTypeEmploye[1], 0.20, 2980))
-
-
-
-    while True:
-        Choix = int(input("Veuillez faire un choix : "))
-
-        if Choix == 0:
-            break
-
-        if Choix == 1:
-         for objFiche in lsFichePaie:
-          print(objFiche)
-
-        if Choix == 2:
-
-
-
-            FichePaie_ = FichePaie()
-
-            FichePaie_.InfEmploye = lsEmployes[0]
-            FichePaie_.NumeroFiche = "A1A2A3A4A5"
-            FichePaie.DateFiche = DT.datetime.now()
-            FichePaie_.NombreHeures = 40
-            FichePaie_.TypeEmploye = T.T_TempsPartiel
-
-            FichePaie_.CalculerPaie()
-
-            lsFichePaie.append(FichePaie_)
-            print("La fiche de paie a été ajouté")
-
+   for objFiche in lsFiche:
+       print(objFiche)
 
 if __name__ == "__main__":
     main()
