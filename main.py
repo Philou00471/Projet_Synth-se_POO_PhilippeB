@@ -139,48 +139,48 @@ class FenetreQt(QtWidgets.QMainWindow, F.Ui_EntrepriseGestion):
 
         #Configuration graphique pour le btnConnexion
 
-        #self.setFixedSize(400, 400)  # Dimensions du form
-        #self.lblTitre.setText("Bienvenue sur le site de l'entreprise")  # Titre du Menu
-        #self.gbxConnexion.setGeometry(QtCore.QRect(40, 50, 331, 291))  # Visible
-        #self.gbxAjouterModifierSupprimer.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
-        #self.gbxModifSupp.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
-        #self.gbxFichePaie.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
-        #self.gbxRecherche.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
-        #self.gbxMenu.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
+        self.setFixedSize(400, 400)  # Dimensions du form
+        self.lblTitre.setText("Bienvenue sur le site de l'entreprise")  # Titre du Menu
+        self.gbxConnexion.setGeometry(QtCore.QRect(40, 50, 331, 291))  # Visible
+        self.gbxAjouterModifierSupprimer.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
+        self.gbxModifSupp.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
+        self.gbxFichePaie.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
+        self.gbxRecherche.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
+        self.gbxMenu.setGeometry(QtCore.QRect(1200, 350, 120, 60))  # Caché
 
 
         #Création d'un message d'erreur si la validation est invalide
-        #MessageErreur = ""
+        MessageErreur = ""
 
         #Instanciation de la classe Admin
-        #Admin_ = A.Admin()
+        Admin_ = A.Admin()
 
         #Validation du nom d'identifiant Admin
 
-        #NomAdmin_ = self.txtNomAdmin.text()
-        #Admin_.NomDeAdmin = NomAdmin_
-        #if Admin_.NomDeAdmin != NomAdmin_:
-            #MessageErreur += "Le nom d'utilisateur admin est invalide !\n"
-            #self.txtNomAdmin.setText("")    #On efface le résultat invalide
+        NomAdmin_ = self.txtNomAdmin.text()
+        Admin_.NomDeAdmin = NomAdmin_
+        if Admin_.NomDeAdmin != NomAdmin_:
+            MessageErreur += "Le nom d'utilisateur admin est invalide !\n"
+            self.txtNomAdmin.setText("")    #On efface le résultat invalide
 
         #Validation du mot de passe du compte Admin
 
-        #MdpAdmin_ = self.txtMdpAdmin.text()
-        #Admin_.AdminMdp = MdpAdmin_
-        #if Admin_.AdminMdp != MdpAdmin_:
-           # MessageErreur += "Le mot de passe admin est invalide !\n"
-            #self.txtMdpAdmin.setText("")    #On efface le résultat invalide
+        MdpAdmin_ = self.txtMdpAdmin.text()
+        Admin_.AdminMdp = MdpAdmin_
+        if Admin_.AdminMdp != MdpAdmin_:
+            MessageErreur += "Le mot de passe admin est invalide !\n"
+            self.txtMdpAdmin.setText("")    #On efface le résultat invalide
 
         #Si les validations sont bonnes, on affiche le menu du site et on enlève le gbxConnexion
 
-        #if MessageErreur == "":
-        #    self.gbxMenu.setGeometry(QtCore.QRect(40, 50, 331, 291))
-        #    self.gbxConnexion.setGeometry(QtCore.QRect(2000, 300, 120, 60))
+        if MessageErreur == "":
+            self.gbxMenu.setGeometry(QtCore.QRect(40, 50, 331, 291))
+            self.gbxConnexion.setGeometry(QtCore.QRect(2000, 300, 120, 60))
 
         #Autres résultats invalides
 
-        #else:
-        #    MessageErreur += "Veuillez rentrer les bonnes informations du compte admin"
+        else:
+            MessageErreur += "Veuillez rentrer les bonnes informations du compte admin"
 
     #Affichage des fiches de paies précédentes
     @QtCore.pyqtSlot()
@@ -479,7 +479,6 @@ class FenetreQt(QtWidgets.QMainWindow, F.Ui_EntrepriseGestion):
          self.txtMessage.setText("L'employé a été retiré avec succès.")
 
 
-
     @QtCore.pyqtSlot()
     def on_btnModifSuppEmp_clicked(self):
 
@@ -595,15 +594,12 @@ class FenetreQt(QtWidgets.QMainWindow, F.Ui_EntrepriseGestion):
 
         FichePaie_ = P.FichePaie()
 
-        FichePaie_.NombreHeures = int(self.txtNbHeures.text())
-
-        FichePaie_.TypeEmploye = self.cboTypeEmploie.currentText()
 
         for objEmploye in lsEmployes:
-            if self.txtNumero.text() == objEmploye:
+            if self.txtNumeroEmploye.text() == objEmploye.NumEmploye:
                 FichePaie_.InfEmploye = objEmploye
 
-        NumFiche_ = self.txtFiche.text().upper()
+        NumFiche_ = self.txtFiche.text()
         FichePaie_.NumeroFiche = NumFiche_
         if FichePaie_.NumeroFiche != NumFiche_:
             MessageErreur += "Le numéro de la fiche de paie est invalide !\n"
@@ -616,11 +612,39 @@ class FenetreQt(QtWidgets.QMainWindow, F.Ui_EntrepriseGestion):
             MessageErreur += "Veuillez ré-essayez avec de nouvelles informations"
             self.txtMessage.setText(MessageErreur)
 
+        NbHeures_ = int(self.txtNbHeures.text())
+        FichePaie_.NombreHeures = NbHeures_
+        if FichePaie_.NombreHeures != NbHeures_:
+            MessageErreur += "Le nombre d'heures est invalide"
+            self.txtNbHeures.setText("")
+        
+        if MessageErreur == "":
+          self.txtMessage.setText("Le nombre d'heures est bon ")
+
+        else:
+            MessageErreur += "Veuillez ré-essayez avec de nouvelles informations"
+            self.txtMessage.setText(MessageErreur)
+
         FichePaie_.DateFiche = DT.datetime.now()
+
+        if self.cboTypeEmploie.currentText() == "Sur appel":
+            FichePaie_.TypeEmploye = lsTypeEmploye[1]
+        if self.cboTypeEmploie.currentText() == "Temps partiel":
+            FichePaie_.TypeEmploye = lsTypeEmploye[0]
+        if self.cboTypeEmploie.currentText() == "Temps plein":
+            FichePaie_.TypeEmploye = lsTypeEmploye[2]
+
+
 
         FichePaie_.CalculerPaie()
 
-        self.txtAffichageFiche.setText(FichePaie_)
+        lsFichePaie.append(FichePaie_)
+        self.txtMessage.setText("La fiche de paie a été ajouté à l'historique de paie")
+
+        Chaine = ""
+        Chaine += str(FichePaie_)
+
+        self.txtAffichageFiche.setText(Chaine)
 
     #Rechercher un employé pour but de le modifier, supprimer ou ajouter une fiche de paie
     @QtCore.pyqtSlot()
