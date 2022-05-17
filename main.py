@@ -8,7 +8,7 @@
 import sys
 
 #Importation de jsonpickle
-import jsonpickle
+#import jsonpickle
 
 #Importation du fichier Qt Designer UI converti en PY
 import EntrepriseInterface as F
